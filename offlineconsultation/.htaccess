@@ -1,0 +1,8 @@
+#Turn Rewrite Engine on
+RewriteEngine on
+
+#Rewrite for Project.php
+RewriteRule ^staffHome?$ /staff/index.html [L]
+
+#college.html
+#RewriteRule ^colleges/([0-9a-zA-Z]+) college.html?searchTerm=$1 [NC,L]

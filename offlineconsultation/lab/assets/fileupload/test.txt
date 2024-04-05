@@ -1,0 +1,12 @@
+@DataProvider(name = "loginData")
+    public Object[][] provideData() {
+        return new Object[][] {
+            
+            {"user2", "pass2"},
+            {"username","password"},
+            {"standard_user","secret_sauce"},
+        };
+
+
+
+https://youtu.be/AxouQUrqwsY?si=i75qo9oM4d0sZBFC

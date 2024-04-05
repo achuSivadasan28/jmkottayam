@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>John Marians</title>
+    <meta name="theme-color" content="#557bfe">
+
+
+    <!-- unicon  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	
+	<style>
+		.toasterPopup{
+			position: fixed;
+			z-index: 120;
+			transform: translateX(-50%);
+			top: -110%;
+			left: 50%;
+			padding: 10px 15px;
+			border-radius: 10px;
+			display: flex;
+			align-items: center;
+			transition: .3s ease all;
+			opacity: 0;
+		}
+		.toasterPopupActive{
+			top: 20px;
+			opacity: 1;
+			transition: .3s ease all;
+		}
+		.success{
+			background: #b7f8c7;
+		}
+		.error{
+			background: #ffb8b7;
+		}
+		.wranning{
+			background: #fbe7c8;
+		}
+		.toasterPopup .toasterPopupIcon{
+			font-size: 25px;
+			background: #0000001c;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		.toasterPopup .toasterPopupMessage{
+			display: flex;
+			flex-direction: column;
+			margin: 0px 20px;
+		}
+		.toasterPopup .toasterPopupMessage h3{
+			font-size: 14px;
+			font-weight: 500;
+		}
+		.toasterPopup .toasterPopupMessage p{
+			font-size: 12px;
+			font-weight: 400;
+			margin-top: 5px;
+			color: #3b3b3b;
+		}
+		.toasterPopup .toasterPopupClose{
+			padding: 10px;
+			font-size: 20px;
+			cursor: pointer;
+		}
+	</style>
+    
+    <main>
+
+        <!-- shimmer -->
+        <div class="shimmer"></div>
+        <!-- shimmer close -->
+		
+		
+		<!--toaster popup-->
+		<div class="toasterPopup">
+			<div class="toasterPopupIcon">
+				<!--<i class="uil uil-check-circle"></i>-->
+			</div>
+			<div class="toasterPopupMessage">
+				<h3 id="stage">Success</h3>
+				<p id="msg">You can access all the files in this folder.</p>
+			</div>
+			<div class="toasterPopupClose">
+				<i class="uil uil-multiply"></i>
+			</div>
+		</div>
+		<!--toaster popup close -->
+		
+
+        <!-- sidemenu  -->
+        <div class="sidemenu">
+            <div class="closeSidemenu"><i class="uil uil-multiply"></i></div>
+            <div class="sidemenuProfile">
+                <a href="login.html" class="sidemenuLoginBtn">Login</a>
+            </div>
+            <div class="sidemenuBody">
+                <ul>
+                    <li>
+                        <a href="index.html" class="sidemenuLinkActive"><span><i class="uil uil-estate"></i></span> <p>Home</p></a>
+                    </li>
+                    <li>
+                        <a href="contact.html"><span><i class="uil uil-headphones"></i></span> <p>Contact</p></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- sidemenu close -->
+
+        <!-- nav  -->
+        <nav>
+            <div class="container">
+                <a href="index.html" class="navLogo">
+                    <img src="assets/images/johnmariansLogo.png" alt="John Marians Logo">
+                </a>
+                <div class="navBar">
+                    <div class="navBarBox">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- nav close -->
+
+        <!-- form section  -->
+        <section id="formSection">
+            <div class="container">
+                <div class="formSectionMain">
+                    <div class="form">
+                        <h1>Profile Details</h1>
+                        <p>No need to rush to the hospital through the busy traffic and then wait another 45 minutes just to see a Doctor!</p>
+                        <form action="" id="registration_details">
+                            <div class="formGroup">
+                                <label for="">Enter Name</label>
+                                <input type="text" id="Name" required>
+								<span id="name_error" style="color:red"></span>
+                            </div>
+                            <div class="formGroup">
+                                <label for="">Phone Number</label>
+                                <input type="number" id="number_data" value="" disabled required>
+								<span id="number_error" style="color:red"></span>
+                            </div>
+                            <div class="formGroup">
+                                <label for="">Email Address</label>
+                                <input type="email" id="email" required>
+								<span id="email_error" style="color:red"></span>
+                            </div>
+                            <button class="registerBtn">Submit</button>
+                            <div class="loginBottomLine">or</div>
+                            <div class="loginBottomLink">
+                                <p>Already have an account <a href="login.html">Login now</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- form section close -->
+
+        <!-- footer  -->
+        <footer class="foot2">
+            <div class="container">
+                <div class="footerMain">
+                    <div class="footerStripRights">
+                        <p>© 2022, All Rights Reserved.</p>
+                    </div>
+                    <div class="footerStripCreat">
+                        <p>Designed with <i class="uil uil-heart"></i><a href="https://esightsolutions.com/" target="_blank">Esight Solutions</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+
+    </main>
+
+
+    <!-- jquery  -->
+    <script src="assets/js/jquery.js"></script>
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/4022a59704.js" crossorigin="anonymous"></script>
+    <!-- main -->
+    <script src="assets/js/main.js"></script>
+	<script src="assets/registration/register.js"></script>
+    <script>
+
+        //$('.registerBtn').click(function(e){
+            //e.preventDefault();
+            //window.location = 'book-doctor.html'
+       // });
+        
+    </script>
+
+</body>
+</html>

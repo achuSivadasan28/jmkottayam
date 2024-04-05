@@ -1,0 +1,5363 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --primaryColor: #1c9900;
+  --secondaryColor: #f95d39;
+  --secondaryTextColor: rgb(141, 141, 141);
+  --thirdColor: rgb(0 185 116);
+  --fourthColor: #f96464;
+  --fifthColor: #f19f24;
+  --sixthColor: #2461f1;
+  --seventhColor: #5000b2;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.048);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b7b6ff;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8381fb;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+a, button, div, span, i, b, h1, h2, h3, h4, h5, h6, p, input, ul, li, select, label, textarea {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+  color: transparent;
+}
+
+video::-internal-media-controls-overlay-cast-button {
+  display: none;
+}
+
+textarea {
+  resize: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main {
+  overflow: hidden;
+}
+
+.shimmer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 105;
+  background: rgba(0, 0, 0, 0.486);
+  display: none;
+}
+
+.deleteAlert {
+  position: fixed;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 110;
+  background: white;
+  border-radius: 10px;
+  padding: 40px;
+  width: 400px;
+  display: none;
+}
+
+.deleteAlert .deleteAlertMian {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.deleteAlert .deleteAlertMian .deleteAlertThumbnail {
+  width: 200px;
+}
+
+.deleteAlert .deleteAlertMian .deleteAlertThumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.deleteAlert .deleteAlertMian .deleteAlertContent {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.deleteAlert .deleteAlertMian .deleteAlertContent p {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.deleteAlert .deleteAlertMian .deleteAlertContent .deleteAlertBtnArea {
+  width: 100%;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.deleteAlert .deleteAlertMian .deleteAlertContent .deleteAlertBtnArea .closedeleteAlert {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+  padding: 14px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  background: #eee;
+  color: black;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.deleteAlert .deleteAlertMian .deleteAlertContent .deleteAlertBtnArea .closedeleteAlert:hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+  opacity: .7;
+}
+
+.deleteAlert .deleteAlertMian .deleteAlertContent .deleteAlertBtnArea .confirmdeleteAlert {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+  padding: 14px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--fourthColor);
+  color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.deleteAlert .deleteAlertMian .deleteAlertContent .deleteAlertBtnArea .confirmdeleteAlert:hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+  opacity: .7;
+}
+
+.commentsPopup {
+  position: fixed;
+  z-index: 110;
+  width: 900px;
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  display: none;
+}
+
+.commentsPopup h1 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.commentsPopup .commentsPopupMain {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-top: 1px solid #eee;
+  margin-top: 15px;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupForm {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupForm h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupForm form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupForm form .formGroup {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupForm form .formGroup textarea {
+  border-radius: 10px;
+  width: 100%;
+  height: 300px;
+  border: 1px solid #eee;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  outline: none;
+  padding: 15px;
+  background: rgba(244, 245, 253, 0.361);
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupForm form .formGroup textarea:focus {
+  border: 1px solid var(--primaryColor);
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupForm form .formBtnArea {
+  width: 100%;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupForm form .formBtnArea .closeCommentsPopupBtn {
+  padding: 10px 30px;
+  border-radius: 10px;
+  background: #eee;
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupForm form .formBtnArea .closeCommentsPopupBtn:hover {
+  background: var(--secondaryColor);
+  -webkit-transition: .2s;
+  transition: .2s;
+  color: white;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupForm form .formBtnArea button {
+  padding: 10px 30px;
+  border-radius: 10px;
+  background: var(--primaryColor);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-left: 10px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupForm form .formBtnArea button:hover {
+  background: var(--secondaryColor);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupPrevious {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupPrevious h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupPrevious .commentsPopupPreviousList {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  padding-top: 0;
+  border-radius: 10px;
+  background: #f9e6ff5c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupPrevious .commentsPopupPreviousList dl {
+  position: relative;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupPrevious .commentsPopupPreviousList dl .PreviousListDate {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: #fdf6ff;
+  padding: 10px 0px;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupPrevious .commentsPopupPreviousList dl .PreviousListDate span {
+  font-size: 12px;
+  background: #dcffd2;
+  color: black;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 5px;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupPrevious .commentsPopupPreviousList dl .commentsPopupPreviousBox {
+  width: 100%;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupPrevious .commentsPopupPreviousList dl .commentsPopupPreviousBox p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupPrevious .commentsPopupPreviousList dl .commentsPopupPreviousBox p:nth-child(1) {
+  margin-top: 0;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupPrevious .commentsPopupPreviousList .elseDesign {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: none;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupPrevious .commentsPopupPreviousList .elseDesign .elseDesignthumbnail {
+  width: 150px;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupPrevious .commentsPopupPreviousList .elseDesign .elseDesignthumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.commentsPopup .commentsPopupMain .commentsPopupPrevious .commentsPopupPreviousList .elseDesign p {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profileDetailsPopup {
+  position: fixed;
+  z-index: 110;
+  width: 1000px;
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  display: none;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox1 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 35%;
+          flex: 0 0 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox1 .profileDetailsHead {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(45deg, var(--primaryColor), var(--secondaryColor));
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox1 .profileDetailsHead .UniqueId span {
+  background: var(--fifthColor);
+  color: white;
+  font-size: 12px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox1 .profileDetailsHead h1 {
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox1 .totalVisit {
+  width: 100%;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox1 .totalVisit span {
+  padding: 8px 20px;
+  background: var(--thirdColor);
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox1 .totalVisit span b {
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox1 .profileDetailsBody {
+  width: 100%;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox1 .profileDetailsBody ul {
+  width: 100%;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox1 .profileDetailsBody ul li {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: 1px solid rgba(238, 238, 238, 0.313);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox1 .profileDetailsBody ul li:nth-child(1) {
+  border-top: none;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox1 .profileDetailsBody ul li span {
+  font-size: 12px;
+  width: 60px;
+  color: var(--secondaryTextColor);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 2px;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox1 .profileDetailsBody ul li span b {
+  color: black;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox1 .profileDetailsBody ul li p {
+  font-size: 14px;
+  width: calc(100% - 70px);
+  color: black;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 60%;
+          flex: 0 0 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 .commentsPopupPreviousList {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  padding-top: 0;
+  border-radius: 10px;
+  background: #f9e6ff5c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 .commentsPopupPreviousList dl {
+  position: relative;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 .commentsPopupPreviousList dl .PreviousListDate {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: #fdf6ff;
+  padding: 10px 0px;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 .commentsPopupPreviousList dl .PreviousListDate span {
+  font-size: 12px;
+  background: #dcffd2;
+  color: black;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 5px;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 .commentsPopupPreviousList dl .commentsPopupPreviousBox {
+  width: 100%;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 .commentsPopupPreviousList dl .commentsPopupPreviousBox p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 .commentsPopupPreviousList dl .commentsPopupPreviousBox p:nth-child(1) {
+  margin-top: 0;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 .commentsPopupPreviousList .elseDesign {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: none;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 .commentsPopupPreviousList .elseDesign .elseDesignthumbnail {
+  width: 150px;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 .commentsPopupPreviousList .elseDesign .elseDesignthumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 .commentsPopupPreviousList .elseDesign p {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 .profileDetailsPopupBtnArea {
+  width: 100%;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 .profileDetailsPopupBtnArea .closeProfileDetailsPopup {
+  padding: 10px 30px;
+  border-radius: 10px;
+  background: #eee;
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.profileDetailsPopup .profileDetailsPopupMain .profileDetailsPopupBox2 .profileDetailsPopupBtnArea .closeProfileDetailsPopup:hover {
+  background: var(--secondaryColor);
+  -webkit-transition: .2s;
+  transition: .2s;
+  color: white;
+}
+
+.filterSection {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  z-index: 110;
+  width: 450px;
+  height: 100vh;
+  background: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.filterSection .filterSectionHead {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  height: 60px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.039);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.039);
+  padding: 10px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filterSection .filterSectionHead h1 {
+  font-size: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 500;
+}
+
+.filterSection .filterSectionHead h1 i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.filterSection .filterSectionBody {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  height: calc(100vh - 120px);
+  left: 0;
+  overflow-y: auto;
+  padding: 20px 30px;
+}
+
+.filterSection .filterSectionBody .filterSectionBodyBox {
+  width: 100%;
+  border-top: 1px solid #eee;
+  padding-top: 30px;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.filterSection .filterSectionBody .filterSectionBodyBox:nth-child(1) {
+  border-top: none;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.filterSection .filterSectionBody .filterSectionBodyBox h2 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.filterSection .filterSectionBody .filterSectionBodyBox .filterSectionBodyCheckbox {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.filterSection .filterSectionBody .filterSectionBodyBox .filterSectionBodyCheckbox .formGroup {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+  display: block;
+  margin-top: 20px;
+}
+
+.filterSection .filterSectionBody .filterSectionBodyBox .filterSectionBodyCheckbox .formGroup input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.filterSection .filterSectionBody .filterSectionBodyBox .filterSectionBodyCheckbox .formGroup label {
+  position: relative;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  width: 100%;
+  height: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.filterSection .filterSectionBody .filterSectionBodyBox .filterSectionBodyCheckbox .formGroup label:before {
+  content: '';
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid var(--primaryColor);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.filterSection .filterSectionBody .filterSectionBodyBox .filterSectionBodyCheckbox .formGroup input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 9px;
+  width: 5px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.filterSection .filterSectionBody .filterSectionBodyBox .filterSectionBodyCheckbox .formGroup input:checked + label:before {
+  background: var(--primaryColor);
+}
+
+.filterSection .filterSectionFooter {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  background: white;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.039);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.039);
+  padding: 10px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.filterSection .filterSectionFooter .closeFilter {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+  height: 40px;
+  border-radius: 10px;
+  background: #eee;
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.filterSection .filterSectionFooter .closeFilter:hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+  opacity: .7;
+}
+
+.filterSection .filterSectionFooter .applyFilter {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--primaryColor);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.filterSection .filterSectionFooter .applyFilter:hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+  opacity: .7;
+}
+
+.filterSectionActive {
+  right: 0;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+nav {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.041);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.041);
+  background: white;
+}
+
+@media (max-width: 480px) {
+  nav {
+    height: 70px;
+  }
+}
+
+nav .navLogo {
+  float: left;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 480px) {
+  nav .navLogo {
+    height: 70px;
+  }
+}
+
+nav .navLogo img {
+  width: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  nav .navLogo img {
+    width: 170px;
+  }
+}
+
+nav .navLink {
+  float: right;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 480px) {
+  nav .navLink {
+    height: 70px;
+  }
+}
+
+nav .navLink .BookAppointmentBtn {
+  text-decoration: none;
+  font-size: 16px;
+  padding: 14px 30px;
+  color: white;
+  font-weight: 500;
+  background: var(--primaryColor);
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 5px 20px -2px rgba(0, 76, 255, 0.235);
+          box-shadow: 0px 5px 20px -2px rgba(0, 76, 255, 0.235);
+  -webkit-transition: .3s;
+  transition: .3s;
+  margin-left: 50px;
+}
+
+@media (max-width: 480px) {
+  nav .navLink .BookAppointmentBtn {
+    position: fixed;
+    bottom: 10px;
+    left: 5%;
+    width: 90%;
+    z-index: 100;
+    text-align: center;
+    padding: 16px;
+    border: 1px solid white;
+    margin-left: inherit;
+  }
+}
+
+nav .navLink .BookAppointmentBtn:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+  background: var(--secondaryColor);
+}
+
+nav .navLink ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 480px) {
+  nav .navLink ul {
+    display: none;
+  }
+}
+
+nav .navLink ul li {
+  list-style: none;
+}
+
+nav .navLink ul li a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  margin-left: 80px;
+}
+
+nav .navLink ul li a:hover {
+  color: var(--primaryColor);
+}
+
+nav .navLink ul li .navActive {
+  color: var(--primaryColor);
+}
+
+nav .navBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  float: right;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 50px;
+}
+
+@media (max-width: 480px) {
+  nav .navBar {
+    height: 70px;
+  }
+}
+
+nav .navBar .navBarBox {
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+}
+
+nav .navBar .navBarBox span {
+  width: 100%;
+  height: 2px;
+  background: black;
+  margin-top: 4px;
+}
+
+nav .navBar .navBarBox span:nth-child(1) {
+  margin-top: 0;
+}
+
+footer {
+  width: 100%;
+  padding: 50px 0px;
+  background: #daeef14d;
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding-bottom: 100px;
+  }
+}
+
+footer .footerMain {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-top: 1px solid #dcd9d9;
+  padding-top: 50px;
+}
+
+@media (max-width: 480px) {
+  footer .footerMain .footerStripRights {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+footer .footerMain .footerStripRights p {
+  color: black;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  footer .footerMain .footerStripRights p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  footer .footerMain .footerStripCreat {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+footer .footerMain .footerStripCreat p {
+  color: black;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  footer .footerMain .footerStripCreat p {
+    text-align: center;
+  }
+}
+
+footer .footerMain .footerStripCreat p i {
+  margin: 0px 5px;
+}
+
+footer .footerMain .footerStripCreat p a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--primaryColor);
+}
+
+@media (max-width: 480px) {
+  .foot2 {
+    padding-bottom: 50px;
+  }
+}
+
+.foot2 .footerMain {
+  border-top: none;
+  padding-top: 0px;
+}
+
+@media (max-width: 480px) {
+  .foot2 .footerMain .footerStripRights {
+    margin-top: 0px;
+  }
+}
+
+#formSection {
+  width: 100%;
+  margin-top: 80px;
+  position: relative;
+  z-index: 0;
+}
+
+@media (max-width: 480px) {
+  #formSection {
+    margin-top: 70px;
+    padding: 50px 0px;
+    min-height: calc(100vh - 70px);
+  }
+}
+
+#formSection .formSectionMain {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: calc(100vh - 80px);
+}
+
+@media (max-width: 480px) {
+  #formSection .formSectionMain {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    min-height: inherit;
+  }
+}
+
+#formSection .formSectionMain .form {
+  width: 600px;
+  padding: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 480px) {
+  #formSection .formSectionMain .form {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+#formSection .formSectionMain .form h1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  #formSection .formSectionMain .form h1 {
+    font-size: 25px;
+  }
+}
+
+#formSection .formSectionMain .form p {
+  font-size: 13px;
+  margin-top: 20px;
+  line-height: 1.7;
+  opacity: .7;
+}
+
+#formSection .formSectionMain .form p span {
+  color: var(--secondaryColor);
+  font-weight: 500;
+}
+
+#formSection .formSectionMain .form form {
+  width: 100%;
+  margin-top: 20px;
+}
+
+#formSection .formSectionMain .form form .formGroup {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#formSection .formSectionMain .form form .formGroup label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #717171;
+}
+
+#formSection .formSectionMain .form form .formGroup input {
+  width: 100%;
+  height: 45px;
+  margin-top: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.933);
+  outline: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 15px;
+  caret-color: var(--primaryColor);
+}
+
+#formSection .formSectionMain .form form .formGroup input:focus {
+  border: 1px solid var(--primaryColor);
+}
+
+#formSection .formSectionMain .form form .formGroup input[type='date'] {
+  background: white;
+}
+
+#formSection .formSectionMain .form form .formGroup select {
+  width: 100%;
+  height: 45px;
+  margin-top: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.933);
+  outline: none;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 15px;
+  caret-color: var(--primaryColor);
+}
+
+#formSection .formSectionMain .form form .formGroup select:focus {
+  border: 1px solid var(--primaryColor);
+}
+
+#formSection .formSectionMain .form form .formGroup select option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#formSection .formSectionMain .form form .formGroup .passwordinput {
+  letter-spacing: 15px;
+  padding-right: 40px;
+}
+
+#formSection .formSectionMain .form form .formGroup .formPassword {
+  position: relative;
+}
+
+#formSection .formSectionMain .form form .formGroup .formPassword .togglePassword {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  color: var(--primaryColor);
+  font-size: 20px;
+}
+
+#formSection .formSectionMain .form form .formGroup .formRadioBtn {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+#formSection .formSectionMain .form form .formGroup .formRadioBtn .myradio {
+  display: inline-block;
+  border-radius: 999px;
+}
+
+#formSection .formSectionMain .form form .formGroup .formRadioBtn .myradio input {
+  opacity: 0;
+  width: auto;
+  position: absolute;
+}
+
+#formSection .formSectionMain .form form .formGroup .formRadioBtn .myradio label {
+  border-radius: 9999px;
+  padding: 10px 20px 10px 45px;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  font-size: 12px;
+}
+
+#formSection .formSectionMain .form form .formGroup .formRadioBtn .myradio label::before, #formSection .formSectionMain .form form .formGroup .formRadioBtn .myradio label::after {
+  content: "";
+  border-radius: 9999px;
+  width: 16px;
+  height: 16px;
+  margin: 3px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+#formSection .formSectionMain .form form .formGroup .formRadioBtn .myradio label::before {
+  background-color: #dcdcdc;
+  border: 2px solid #dcdcdc;
+  top: 4px;
+  left: 15px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#formSection .formSectionMain .form form .formGroup .formRadioBtn .myradio label::after {
+  background-color: #ffffff;
+  top: 6px;
+  left: 17px;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+}
+
+#formSection .formSectionMain .form form .formGroup .formRadioBtn .myradio label:hover {
+  background-color: rgba(85, 123, 254, 0.1);
+}
+
+#formSection .formSectionMain .form form .formGroup .formRadioBtn .myradio label:hover::before {
+  border: 2px solid var(--primaryColor);
+}
+
+#formSection .formSectionMain .form form .formGroup .formRadioBtn .myradio input:checked ~ label {
+  background-color: rgba(85, 123, 254, 0.1);
+}
+
+#formSection .formSectionMain .form form .formGroup .formRadioBtn .myradio input:checked ~ label::before {
+  background-color: var(--primaryColor);
+  border: 2px solid var(--primaryColor);
+}
+
+#formSection .formSectionMain .form form .formGroup .formRadioBtn .myradio input:checked ~ label::after {
+  width: 8px;
+  height: 8px;
+  top: 10px;
+  left: 21px;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect select {
+  display: none !important;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.25)), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40FFFFFF', endColorstr='#00FFFFFF', GradientType=0);
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 40px;
+  outline: none;
+  padding-left: 15px;
+  padding-right: 30px;
+  position: relative;
+  text-align: left !important;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  width: 100%;
+  border-radius: 15px;
+  height: 45px;
+  font-weight: 500;
+  margin-top: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.933);
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select:focus {
+  border: 1px solid var(--primaryColor);
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select:active,
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select.open {
+  background-color: #fff !important;
+  border: 1px solid var(--primaryColor);
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select:after {
+  height: 0;
+  width: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #777;
+  -webkit-transform: origin(50% 20%);
+  transform: origin(50% 20%);
+  -webkit-transition: all 0.125s ease-in-out;
+  transition: all 0.125s ease-in-out;
+  content: '';
+  display: block;
+  margin-top: -2px;
+  pointer-events: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select.open:after {
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .current {
+  display: block;
+  overflow: hidden;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select.open .list {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select.open .option {
+  cursor: pointer;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select.wide {
+  width: 100%;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select.wide .list {
+  left: 0 !important;
+  right: 0 !important;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .list {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+  transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+  -webkit-transform: scale(0.75);
+  transform: scale(0.75);
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 4px;
+  padding: 3px 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid rgba(128, 128, 128, 0.933);
+  /* width */
+  /* Track */
+  /* Handle */
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .list::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .list::-webkit-scrollbar-track {
+  background: rgba(199, 197, 197, 0.525);
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .list::-webkit-scrollbar-thumb {
+  background: var(--secondaryColor);
+  border-radius: 5px;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .list:hover .option:not(:hover) {
+  background-color: transparent !important;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .dd-search {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0.5rem;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .dd-searchbox {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #999;
+  border-color: #999;
+  border-radius: 10px;
+  outline: none;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .dd-searchbox::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .dd-searchbox:-ms-input-placeholder {
+  font-weight: 400;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .dd-searchbox::-ms-input-placeholder {
+  font-weight: 400;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .dd-searchbox::placeholder {
+  font-weight: 400;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .dd-searchbox:focus {
+  border-color: #12CBC4;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .list ul {
+  padding: 0;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .option {
+  cursor: default;
+  font-weight: 500;
+  line-height: 40px;
+  font-size: 14px;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 29px;
+  text-align: left;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  list-style: none;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .option:hover,
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .option:focus {
+  background-color: #f6f6f6 !important;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .option.selected {
+  font-weight: 600;
+  color: var(--primaryColor);
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select .option.selected:focus {
+  background: #f6f6f6;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select a {
+  color: #aaa;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSelect .dropdown-select a:hover {
+  color: #666;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSlotSection {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSlotSection .control {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+@media (max-width: 480px) {
+  #formSection .formSectionMain .form form .formGroup .formSlotSection .control {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 49%;
+            flex: 0 0 49%;
+  }
+}
+
+#formSection .formSectionMain .form form .formGroup .formSlotSection .control input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSlotSection .control svg {
+  margin-right: 6px;
+  border-radius: 50%;
+  -webkit-box-shadow: 3px 3px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 16px rgba(0, 0, 0, 0.2);
+}
+
+#formSection .formSectionMain .form form .formGroup .formSlotSection .control input:disabled ~ .control__content {
+  background: #eee;
+  border: 1px solid #eee;
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#formSection .formSectionMain .form form .formGroup .formSlotSection .control__content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 10px;
+  font-size: 24px;
+  line-height: 32px;
+  background-color: rgba(137, 165, 255, 0.05);
+  border: 1px solid #d9e0ff;
+  border-radius: 10px;
+}
+
+@media (max-width: 480px) {
+  #formSection .formSectionMain .form form .formGroup .formSlotSection .control__content {
+    padding: 6px 10px;
+  }
+}
+
+#formSection .formSectionMain .form form .formGroup .formSlotSection .control__content:hover {
+  border: 1px solid var(--primaryColor);
+}
+
+#formSection .formSectionMain .form form .formGroup .formSlotSection .control__content .timeIcon {
+  font-size: 16px;
+  margin-right: 10px;
+  color: black;
+}
+
+@media (max-width: 480px) {
+  #formSection .formSectionMain .form form .formGroup .formSlotSection .control__content .timeIcon {
+    font-size: 12px;
+    margin-right: 5px;
+  }
+}
+
+#formSection .formSectionMain .form form .formGroup .formSlotSection .control__content p {
+  margin-top: 0;
+  opacity: 1;
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  #formSection .formSectionMain .form form .formGroup .formSlotSection .control__content p {
+    font-size: 12px;
+  }
+}
+
+#formSection .formSectionMain .form form .formGroup .formSlotSection .control input:focus ~ .control__content {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#formSection .formSectionMain .form form .formGroup .formSlotSection .control input:checked ~ .control__content {
+  background-color: rgba(0, 255, 0, 0.126);
+  border: 1px solid #00b400;
+}
+
+#formSection .formSectionMain .form form .otpField {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+  #formSection .formSectionMain .form form .otpField {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+#formSection .formSectionMain .form form .otpField input {
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: 2px solid #bfbfbf;
+  background: #fff;
+  font-weight: bold;
+  color: #000;
+  outline: none;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+#formSection .formSectionMain .form form .otpField input:focus {
+  border: 2px solid var(--primaryColor);
+  -webkit-box-shadow: 0 0 20px #a527ff10;
+          box-shadow: 0 0 20px #a527ff10;
+}
+
+#formSection .formSectionMain .form form .otpField .disabled {
+  border: 2px solid var(--primaryColor);
+  color: var(--primaryColor);
+}
+
+#formSection .formSectionMain .form form .forgtPsd {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 20px;
+}
+
+#formSection .formSectionMain .form form .forgtPsd a {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: right;
+}
+
+#formSection .formSectionMain .form form .forgtPsd a:hover {
+  text-decoration: underline;
+}
+
+#formSection .formSectionMain .form form button {
+  width: 100%;
+  margin-top: 30px;
+  padding: 14px;
+  background: var(--primaryColor);
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 15px;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-box-shadow: 0px 5px 20px -2px rgba(0, 76, 255, 0.235);
+          box-shadow: 0px 5px 20px -2px rgba(0, 76, 255, 0.235);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#formSection .formSectionMain .form form button:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+  background: var(--secondaryColor);
+}
+
+#formSection .formSectionMain .form form .disabledBtn {
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+#formSection .formSectionMain .form form .loginBottomLine {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#formSection .formSectionMain .form form .loginBottomLine::after {
+  position: absolute;
+  content: '';
+  width: 40%;
+  height: 1px;
+  left: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.196), black);
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+#formSection .formSectionMain .form form .loginBottomLine::before {
+  position: absolute;
+  content: '';
+  width: 40%;
+  height: 1px;
+  right: 0;
+  background: linear-gradient(45deg, black, rgba(0, 0, 0, 0.196), rgba(255, 255, 255, 0));
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
+}
+
+#formSection .formSectionMain .form form .loginBottomLink {
+  width: 100%;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#formSection .formSectionMain .form form .loginBottomLink p {
+  font-size: 14px;
+  margin-top: 0;
+  font-weight: 500;
+  text-align: center;
+  opacity: 1;
+}
+
+#formSection .formSectionMain .form form .loginBottomLink p a {
+  text-decoration: none;
+  color: var(--primaryColor);
+}
+
+#dashboard {
+  width: 100%;
+  background: #f2f6feeb;
+  min-height: 100vh;
+  float: left;
+  padding-bottom: 10px;
+}
+
+#dashboard .nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  background: white;
+  z-index: 100;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.046);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.046);
+}
+
+#dashboard .nav .navLogo {
+  float: left;
+  height: 60px;
+  width: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard .nav .navLogo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#dashboard .nav .navBar {
+  float: left;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 80px;
+}
+
+@media (max-width: 768px) {
+  #dashboard .nav .navBar {
+    float: right;
+    margin-left: 0;
+  }
+}
+
+#dashboard .nav .navBar .navBarBox {
+  background: #e8f0ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 8px 10px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#dashboard .nav .navBar .navBarBox span {
+  width: 20px;
+  height: 2px;
+  margin-top: 4px;
+  border-radius: 5px;
+  display: block;
+  background: black;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .nav .navBar .navBarBox span:nth-child(1) {
+  margin-top: 0;
+}
+
+#dashboard .nav .navBar .navBarBoxActive span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-top: 0px;
+}
+
+#dashboard .nav .navBar .navBarBoxActive span:nth-child(2) {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#dashboard .nav .navBar .navBarBoxActive span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: -8px;
+}
+
+#dashboard .nav .navProfile {
+  float: right;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 768px) {
+  #dashboard .nav .navProfile {
+    display: none;
+  }
+}
+
+#dashboard .nav .navProfile .navProfileBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard .nav .navProfile .navProfileBox .navProfileThumbnail {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid var(--primaryColor);
+}
+
+#dashboard .nav .navProfile .navProfileBox .navProfileThumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#dashboard .nav .navProfile .navProfileBox .navProfileName {
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#dashboard .nav .navProfile .navProfileBox .navProfileName p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#dashboard .nav .navProfile .navProfileBox .navProfileName span {
+  font-size: 12px;
+  color: #545454;
+}
+
+#dashboard .sidemenu {
+  position: fixed;
+  width: 260px;
+  height: calc(100vh - 80px);
+  background: white;
+  margin-top: 70px;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.046);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.046);
+  border-radius: 20px;
+  left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  z-index: 100;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .sidemenu h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+  padding-top: 30px;
+}
+
+#dashboard .sidemenu h2:nth-child(1) {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0px;
+}
+
+#dashboard .sidemenu ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: auto;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .sidemenu ul:nth-last-child(2) {
+  margin-bottom: 25px;
+}
+
+#dashboard .sidemenu ul::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+#dashboard .sidemenu ul li {
+  width: 100%;
+  list-style: none;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .sidemenu ul li a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+}
+
+#dashboard .sidemenu ul li a:hover .sidemenuIcon {
+  background: var(--secondaryColor);
+  color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .sidemenu ul li a .sidemenuIcon {
+  width: 35px;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  border-radius: 10px;
+  background: rgba(247, 254, 251, 0.548);
+  color: var(--primaryColor);
+  border: 1px solid #eee;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .sidemenu ul li a p {
+  width: calc(100% - 50px);
+  font-size: 12px;
+  font-weight: 500;
+  color: black;
+}
+
+#dashboard .sidemenu ul li .sidemenuLinkActive:hover .sidemenuIcon {
+  background: var(--primaryColor);
+  color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .sidemenu ul li .sidemenuLinkActive .sidemenuIcon {
+  background: var(--primaryColor);
+  color: white;
+  -webkit-box-shadow: 0px 5px 20px -2px rgba(0, 76, 255, 0.235);
+          box-shadow: 0px 5px 20px -2px rgba(0, 76, 255, 0.235);
+  border: 1px solid var(--primaryColor);
+}
+
+#dashboard .sidemenu ul li .sidemenuLinkActive p {
+  color: black;
+}
+
+#dashboard .sidemenu .sidemenuFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0px 10px 10px 20px;
+}
+
+#dashboard .sidemenu .sidemenuFooter span {
+  margin-top: 5px;
+  font-size: 10px;
+  color: #929292;
+}
+
+#dashboard .sidemenuFullActive {
+  width: 100px;
+  padding: 10px !important;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .sidemenuFullActive h2 {
+  display: none;
+}
+
+#dashboard .sidemenuFullActive ul {
+  border-top: 1px solid #eee;
+  margin-top: 30px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .sidemenuFullActive ul:nth-child(2) {
+  margin-top: 0;
+  border-top: none;
+}
+
+#dashboard .sidemenuFullActive ul li {
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  -webkit-transition: .2s;
+  transition: .2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard .sidemenuFullActive ul li .sidemenuIcon {
+  width: 50px !important;
+  height: 50px !important;
+  font-size: 20px !important;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .sidemenuFullActive ul li p {
+  display: none;
+}
+
+#dashboard .sidemenuFullActive .sidemenuFooter {
+  display: none;
+}
+
+#dashboard .canvas {
+  width: calc(100% - 310px);
+  margin-top: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  float: right;
+  padding-right: 2.5%;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .canvasHead {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#dashboard .canvas .canvasHead .canvasHeadBox1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#dashboard .canvas .canvasHead .canvasHeadBox1 h1 {
+  font-size: 2em;
+  font-weight: 500;
+  height: 40px;
+  max-width: 700px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+#dashboard .canvas .canvasHead .canvasHeadBox1 .breadCrumbs {
+  max-width: 700px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+#dashboard .canvas .canvasHead .canvasHeadBox1 .breadCrumbs a {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--secondaryTextColor);
+}
+
+#dashboard .canvas .canvasHead .canvasHeadBox1 .breadCrumbs a:hover {
+  color: var(--primaryColor);
+}
+
+#dashboard .canvas .canvasHead .canvasHeadBox1 .breadCrumbs span {
+  font-size: 12px;
+  margin: 0px 5px;
+  color: black;
+}
+
+#dashboard .canvas .canvasHead .canvasHeadBox2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#dashboard .canvas .canvasHead .canvasHeadBox2 .addBtn {
+  background: var(--primaryColor);
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 14px 25px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 5px 20px -2px rgba(0, 76, 255, 0.235);
+          box-shadow: 0px 5px 20px -2px rgba(0, 76, 255, 0.235);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .canvasHead .canvasHeadBox2 .addBtn:hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: var(--secondaryColor);
+}
+
+#dashboard .canvas .dashboardPage {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList::after {
+  content: '';
+  height: 0;
+  width: 23%;
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList .dashboardMenuBox {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 23%;
+          flex: 0 0 23%;
+  background: white;
+  -webkit-box-shadow: 0 0 15px rgba(11, 10, 10, 0.046);
+          box-shadow: 0 0 15px rgba(11, 10, 10, 0.046);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  margin-top: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-decoration: none;
+  -webkit-transition: .2s;
+  transition: .2s;
+  border: 1px solid white;
+  position: relative;
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList .dashboardMenuBox:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: .2s;
+  transition: .2s;
+  border: 1px solid var(--primaryColor);
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList .dashboardMenuBox .dashboardMenuBoxIcon {
+  font-size: 3.5em;
+  color: var(--primaryColor);
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList .dashboardMenuBox .dashboardMenuBoxDetails {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 15px;
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList .dashboardMenuBox .dashboardMenuBoxDetails h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList .dashboardMenuBox .dashboardMenuBoxDetails span {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--secondaryTextColor);
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList .dashboardMenuBox .dashboardMenuBoxDetails span b {
+  color: var(--secondaryColor);
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList .dashboardMenuBox .stockNotificationCount {
+  position: absolute;
+  padding: 3px 6px;
+  font-size: 12px;
+  background: var(--secondaryColor);
+  color: white;
+  border-radius: 10px;
+  font-weight: 500;
+  top: -5px;
+  right: -5px;
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList .todayAppointmentbox {
+  background: var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList .todayAppointmentbox .dashboardMenuBoxIcon {
+  color: white;
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList .todayAppointmentbox .dashboardMenuBoxDetails h2 {
+  color: white;
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList .todayAppointmentbox .dashboardMenuBoxDetails span {
+  color: white;
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList .todayAppointmentbox .dashboardMenuBoxDetails span b {
+  color: #00ffd9;
+}
+
+#dashboard .canvas .dashboardPage .dashboardMenuList .dummyDiv {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 23%;
+          flex: 0 0 23%;
+  height: 0;
+}
+
+#dashboard .canvas .consultingWindow {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting {
+  width: 100%;
+  background: white;
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultinghead {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultinghead h1 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultinghead .UniqueId span {
+  background: var(--secondaryColor);
+  color: white;
+  font-size: 14px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody .currentConsultingBox {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody .currentConsultingBox .formGroup {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody .currentConsultingBox .formGroup span {
+  width: 110px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--secondaryTextColor);
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody .currentConsultingBox .formGroup p {
+  width: calc(100% - 120px);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody .currentConsultingBoxBtnArea {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 35%;
+          flex: 0 0 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody .currentConsultingBoxBtnArea .currentConsultingKeepWaitBtn {
+  padding: 10px 25px;
+  width: 130px;
+  height: 45px;
+  background: var(--fourthColor);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 14px;
+  border: 1px solid var(--fourthColor);
+  margin-left: 20px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: none;
+  position: relative;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody .currentConsultingBoxBtnArea .currentConsultingKeepWaitBtn:hover {
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody .currentConsultingBoxBtnArea .addCommentsBtn {
+  padding: 10px 25px;
+  height: 45px;
+  background: rgba(225, 255, 246, 0.432);
+  color: var(--primaryColor);
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 14px;
+  border: 1px solid var(--primaryColor);
+  margin-left: 20px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody .currentConsultingBoxBtnArea .addCommentsBtn:hover {
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody .currentConsultingBoxBtnArea .consultedBtn {
+  padding: 10px 25px;
+  width: 130px;
+  height: 45px;
+  background: var(--thirdColor);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 14px;
+  border: 1px solid var(--thirdColor);
+  margin-left: 20px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: none;
+  position: relative;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody .currentConsultingBoxBtnArea .consultedBtn:hover {
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody .currentConsultingBoxBtnArea .consultedBtn #text {
+  display: block;
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody .currentConsultingBoxBtnArea .consultedBtn #loading {
+  display: none;
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+#dashboard .canvas .consultingWindow .currentConsulting .currentConsultingBody .currentConsultingBoxBtnArea .consultedBtn #done {
+  display: none;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .consultAppointmentListTab {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .consultAppointmentListTab button {
+  padding: 12px 25px;
+  background: white;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+  position: relative;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .consultAppointmentListTab button:hover {
+  background: var(--secondaryColor);
+  -webkit-transition: .2s;
+  transition: .2s;
+  color: white;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .consultAppointmentListTab button .WaitingCount {
+  position: absolute;
+  padding: 3px 6px;
+  border-radius: 50px;
+  background: var(--thirdColor);
+  color: white;
+  font-size: 10px;
+  top: -5px;
+  right: -5px;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .consultAppointmentListTab .active {
+  background: var(--primaryColor);
+  color: white;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent {
+  display: none;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+@-webkit-keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable {
+  width: 100%;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableHead {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableHead .searchBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableHead .searchBox input {
+  width: 350px;
+  height: 40px;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableHead .searchBox button {
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--secondaryColor);
+  color: white;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableHead .searchBox button:hover {
+  opacity: .7;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableHead .dateRange {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableHead .dateRange input {
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  padding: 10px;
+  outline: none;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableHead .dateRange input:focus {
+  border: 1px solid var(--primaryColor);
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableHead .dateRange span {
+  width: 10px;
+  height: 2px;
+  background: var(--primaryColor);
+  margin: 0px 10px;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableHead .dateRange button {
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--primaryColor);
+  color: white;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableHead .dateRange button:hover {
+  opacity: .7;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableHead .filterTable {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableHead .filterTable .filterTableBtn {
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--fifthColor);
+  color: white;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableHead .filterTable .filterTableBtn:hover {
+  opacity: .7;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody {
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper {
+  width: 100%;
+	overflow-x: auto;
+	max-height: calc(100vh - 325px);
+	min-height: calc(100vh - 325px);
+    overflow-y: auto;
+	position: relative;
+}
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table {
+  width: 100%;
+  border-spacing: 0;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  border-top: none;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table thead {
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table tbody {
+  background: #fff;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table th {
+  background-color: #e4eeff;
+  color: black;
+  padding: 12px 14px !important;
+  font-size: 14px !important;
+	position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+	z-index: 30;
+	white-space: pre;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table th:nth-child(1){
+	width: 65px;
+	min-width: 65px;
+	max-width: 65px;
+    left: 0px;
+    z-index: 31;
+}
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table th:nth-child(2){
+	width: 200px;
+    min-width: 200px;
+    max-width: 250px;
+    left: 65px;
+    z-index: 31;
+}
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table th:nth-child(1), #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table th:nth-child(2){
+	    position: sticky;
+}
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td:nth-child(1), #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td:nth-child(2){
+	    position: sticky;
+}
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table .backActive {
+	background: #ffebeb;
+}
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table .backActive td:nth-child(1), #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table .backActive td:nth-child(2){
+	    background: #ffebeb !important;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td:nth-child(1) {
+  border-radius: 1em 1em 0 0;
+  color: black;
+	width: 65px;
+	min-width: 65px;
+	max-width: 65px;
+    left: 0px;
+    z-index: 10;
+	background: white !important;
+}
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td:nth-child(2) {
+	width: 200px;
+    min-width: 200px;
+    max-width: 250px;
+    left: 65px;
+    z-index: 10;
+	background: white;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table th, #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td {
+  padding: 12px 14px;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table tr, #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td {
+  display: block;
+  overflow: hidden;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td {
+  position: relative;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  font-weight: 500;
+}
+.sckelly{
+	display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 45px;
+    z-index: 12;
+}
+.sckelly .sckellyLoader {
+	flex: 0 0 24.95%;
+    position: relative;
+    background-color: #efefef !important;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 1px;
+}
+.sckelly .sckellyLoader::after {
+	position: absolute;
+	transform: translateY(-50%);
+	top: 50%;
+	left: 0;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 40px;
+	background-image: linear-gradient( 100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 80% );
+	background-size: cover;
+	background-position: -100px 0;
+	background-repeat: no-repeat;
+	animation: loading 1s infinite;
+}
+@keyframes loading {
+    0% {
+        background-position: -100px 0;
+    }
+    50% {
+        background-position:100% 0;
+    }
+    100% {
+        background-position: -100px 0;
+    }
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td h4 {
+  font-size: 2em;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .UniqueId span {
+  background: var(--secondaryColor);
+  color: white;
+  font-size: 14px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .keepWaitBtn {
+  padding: 8px 15px;
+  border-radius: 5px;
+  background: var(--fourthColor);
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .keepWaitBtn:hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+  opacity: .7;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .nextBtn {
+  padding: 8px 15px;
+  border-radius: 5px;
+  background: var(--thirdColor);
+  color: white;
+  font-size: 12px;
+  margin-left: 10px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .nextBtn:hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+  opacity: .7;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .disableNextBtn {
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .viewDetailsBtn {
+  padding: 8px 15px;
+  border-radius: 5px;
+  background: var(--fifthColor);
+  color: white;
+  font-size: 12px;
+  margin-left: 10px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .viewDetailsBtn:hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+  opacity: .7;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .tableDeleteBtn {
+  width: 35px;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--fourthColor);
+  color: white;
+  font-size: 16px;
+  margin-right: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .tableDeleteBtn:hover {
+  opacity: .7;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .tableEditBtn {
+  width: 35px;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--thirdColor);
+  color: white;
+  margin-right: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .tableEditBtn:hover {
+  opacity: .7;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .tableViewBtn {
+  width: 35px;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--sixthColor);
+  color: white;
+  margin-right: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .tableViewBtn:hover {
+  opacity: .7;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .tablePrintBtn {
+  width: 35px;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--seventhColor);
+  color: white;
+  margin-right: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .tableBtnArea .tablePrintBtn:hover {
+  opacity: .7;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .good {
+  color: var(--primaryColor);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .avarage {
+  color: var(--fifthColor);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td .belowAvarage {
+  color: var(--fourthColor);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td::before {
+  content: attr(data-label);
+  position: absolute;
+  left: 0;
+  padding-left: 1em;
+  font-weight: 500;
+  font-size: .9em;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table tr {
+  margin-bottom: 1.5em;
+  border-radius: 1em;
+  text-align: right;
+  border: 1px solid #eee;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table tr:last-of-type {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table thead {
+    visibility: visible;
+    position: relative;
+  }
+  #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table th {
+    text-align: left;
+    font-size: .9em;
+    font-weight: 500;
+  }
+  #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table tr {
+    display: table-row;
+    border: none;
+    border-radius: 0;
+    text-align: left;
+  }
+  #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td {
+    display: table-cell;
+  }
+  #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td::before {
+    content: none;
+  }
+  #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td:nth-child(1) {
+    background: transparent;
+    color: #444;
+    border-radius: 0;
+  }
+  #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td:nth-child(n+2):nth-child(odd) {
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 480px) {
+  #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table tbody {
+    background: none;
+  }
+  #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table tr {
+    background: white;
+  }
+  #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table th, #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td {
+    padding: 1em;
+  }
+  #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td p {
+    margin-top: 0;
+    text-align: left;
+    width: 70%;
+    float: right;
+  }
+  #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table td ul {
+    width: 70%;
+    float: right;
+    text-align: left;
+  }
+  #dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper table h4 {
+    width: 70%;
+    float: right;
+    font-size: 25px !important;
+  }
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper ul li {
+  list-style: none;
+  line-height: 1.7;
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper ul li:nth-child(1) {
+  margin-top: 0;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper ul li .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 10px;
+  background: black;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .tableWraper h4 {
+  font-size: 1.7em;
+  margin-top: 10px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  background: #00a733;
+  padding: 12px;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .elseDesign {
+  width: 100%;
+  height: 400px;
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: none;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .elseDesign .elseDesignthumbnail {
+  width: 150px;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .elseDesign .elseDesignthumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#dashboard .canvas .consultingWindow .consultAppointmentList .tabcontent .consultAppointmentListTable .consultAppointmentListTableBody .elseDesign p {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#dashboard .canvasActive {
+  width: calc(100% - 150px);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .doctorProfileSection {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHead {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  z-index: 0;
+  background: white;
+  border-radius: 15px;
+  padding-bottom: 20px;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.046);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.046);
+}
+
+#dashboard .doctorProfileSection .doctorProfileHead::after {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 200px;
+  content: '';
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  overflow: hidden;
+  background: url(../images/profileBanner.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHead .doctorProfileHeadMain {
+  width: 100%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHead .doctorProfileHeadMain .doctorProfileHeadDetails {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHead .doctorProfileHeadMain .doctorProfileHeadDetails .doctorProfileHeadDetailsBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHead .doctorProfileHeadMain .doctorProfileHeadDetails .doctorProfileHeadDetailsBox .doctorProfilethumbnail {
+  width: 150px;
+  height: 150px;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 5px solid white;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHead .doctorProfileHeadMain .doctorProfileHeadDetails .doctorProfileHeadDetailsBox .doctorProfilethumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHead .doctorProfileHeadMain .doctorProfileHeadDetails .doctorProfileHeadDetailsBox .doctorProfileName {
+  margin-left: 20px;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHead .doctorProfileHeadMain .doctorProfileHeadDetails .doctorProfileHeadDetailsBox .doctorProfileName h2 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHead .doctorProfileHeadMain .doctorProfileHeadDetails .doctorProfileHeadDetailsBox .doctorProfileName span {
+  font-size: 14px;
+  margin-top: 5px;
+  font-weight: 500;
+  color: var(--secondaryTextColor);
+}
+
+#dashboard .doctorProfileSection .doctorProfileHead .doctorProfileHeadMain .doctorProfileHeadDetails .doctorProfileHeadDetailsBox .blockDoctorBtn {
+  padding: 8px 25px;
+  border: 1px solid var(--fourthColor);
+  color: var(--fourthColor);
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHead .doctorProfileHeadMain .doctorProfileHeadDetails .doctorProfileHeadDetailsBox .blockDoctorBtn:hover {
+  background: var(--fourthColor);
+  color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHeadBlock {
+  background: red !important;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHeadBlock .doctorProfilethumbnail {
+  border: 5px solid red !important;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHeadBlock .doctorProfileName h2 {
+  color: white !important;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHeadBlock .doctorProfileName span {
+  color: rgba(255, 255, 255, 0.838) !important;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHeadBlock .blockDoctorBtn {
+  border: 1px solid white !important;
+  background: white !important;
+}
+
+#dashboard .doctorProfileSection .doctorProfileHeadBlock .blockDoctorBtn:hover {
+  background: red !important;
+  color: white !important;
+}
+
+#dashboard .doctorProfileSection .doctorProfileBody {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#dashboard .doctorProfileSection .doctorProfileBody .doctorProfileBodyBox {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 49%;
+          flex: 0 0 49%;
+  border-radius: 20px;
+  padding: 40px;
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.034);
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.034);
+}
+
+#dashboard .doctorProfileSection .doctorProfileBody .doctorProfileBodyBox:nth-child(1) {
+  background: #fff4f1;
+}
+
+#dashboard .doctorProfileSection .doctorProfileBody .doctorProfileBodyBox:nth-child(2) {
+  background: #eaf9e6;
+}
+
+#dashboard .doctorProfileSection .doctorProfileBody .doctorProfileBodyBox .doctorProfileBodyBoxhead {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard .doctorProfileSection .doctorProfileBody .doctorProfileBodyBox .doctorProfileBodyBoxhead h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+#dashboard .doctorProfileSection .doctorProfileBody .doctorProfileBodyBox .doctorProfileBodyBoxhead a {
+  text-decoration: none;
+  padding: 8px 25px;
+  background: var(--thirdColor);
+  color: white;
+  font-size: 14px;
+  border-radius: 10px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  font-weight: 500;
+}
+
+#dashboard .doctorProfileSection .doctorProfileBody .doctorProfileBodyBox .doctorProfileBodyBoxhead a:hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+  opacity: .7;
+}
+
+#dashboard .doctorProfileSection .doctorProfileBody .doctorProfileBodyBox .doctorProfileBodyBoxhead a i {
+  margin-right: 5px;
+}
+
+#dashboard .doctorProfileSection .doctorProfileBody .doctorProfileBodyBox ul {
+  width: 100%;
+  margin-top: 20px;
+  border-top: 1px solid white;
+}
+
+#dashboard .doctorProfileSection .doctorProfileBody .doctorProfileBodyBox ul li {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+#dashboard .doctorProfileSection .doctorProfileBody .doctorProfileBodyBox ul li span {
+  font-size: 14px;
+  width: 150px;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 2px;
+}
+
+#dashboard .doctorProfileSection .doctorProfileBody .doctorProfileBodyBox ul li span b {
+  color: black;
+}
+
+#dashboard .doctorProfileSection .doctorProfileBody .doctorProfileBodyBox ul li p {
+  font-size: 14px;
+  width: calc(100% - 170px);
+  color: black;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+#dashboard .formWraper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+#dashboard .formWraper h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#dashboard .formWraper form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+}
+
+#dashboard .formWraper form::after {
+  content: '';
+  height: 0;
+  width: 30%;
+}
+
+#dashboard .formWraper form .dummyDiv {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  height: 0;
+}
+
+#dashboard .formWraper form .formGroup {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+}
+
+#dashboard .formWraper form .formGroup label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#dashboard .formWraper form .formGroup input {
+  width: 100%;
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+#dashboard .formWraper form .formGroup input:focus {
+  border: 1px solid var(--primaryColor);
+}
+
+#dashboard .formWraper form .formGroup select {
+  width: 100%;
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+#dashboard .formWraper form .formGroup select:focus {
+  border: 1px solid var(--primaryColor);
+}
+
+#dashboard .formWraper form .formGroup .formPassword {
+  position: relative;
+  width: 100%;
+}
+
+#dashboard .formWraper form .formGroup .formPassword .togglePassword {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  cursor: pointer;
+}
+
+#dashboard .formWraper form .formGroup .formSelect select {
+  display: none !important;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.25)), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40FFFFFF', endColorstr='#00FFFFFF', GradientType=0);
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 40px;
+  outline: none;
+  padding-left: 15px;
+  padding-right: 30px;
+  position: relative;
+  text-align: left !important;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  width: 100%;
+  border-radius: 5px;
+  height: 45px;
+  font-weight: 500;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select:focus {
+  border: 1px solid var(--primaryColor);
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select:active,
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select.open {
+  background-color: #fff !important;
+  border: 1px solid var(--primaryColor);
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select:after {
+  height: 0;
+  width: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #777;
+  -webkit-transform: origin(50% 20%);
+  transform: origin(50% 20%);
+  -webkit-transition: all 0.125s ease-in-out;
+  transition: all 0.125s ease-in-out;
+  content: '';
+  display: block;
+  margin-top: -2px;
+  pointer-events: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select.open:after {
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+#dashboard .formWraper form .formGroup .formSelect .current {
+  display: block;
+  overflow: hidden;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select.open .list {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select.open .option {
+  cursor: pointer;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select.wide {
+  width: 100%;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select.wide .list {
+  left: 0 !important;
+  right: 0 !important;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .list {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+  transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+  -webkit-transform: scale(0.75);
+  transform: scale(0.75);
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 4px;
+  padding: 3px 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid rgba(128, 128, 128, 0.933);
+  /* width */
+  /* Track */
+  /* Handle */
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .list::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .list::-webkit-scrollbar-track {
+  background: rgba(199, 197, 197, 0.525);
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .list::-webkit-scrollbar-thumb {
+  background: var(--secondaryColor);
+  border-radius: 5px;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .list:hover .option:not(:hover) {
+  background-color: transparent !important;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .dd-search {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0.5rem;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .dd-searchbox {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #999;
+  border-color: #999;
+  border-radius: 5px;
+  outline: none;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .dd-searchbox::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .dd-searchbox:-ms-input-placeholder {
+  font-weight: 400;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .dd-searchbox::-ms-input-placeholder {
+  font-weight: 400;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .dd-searchbox::placeholder {
+  font-weight: 400;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .dd-searchbox:focus {
+  border-color: #12CBC4;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .list ul {
+  padding: 0;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .option {
+  cursor: default;
+  font-weight: 500;
+  line-height: 40px;
+  font-size: 14px;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 29px;
+  text-align: left;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  list-style: none;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .option:hover,
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .option:focus {
+  background-color: #f6f6f6 !important;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .option.selected {
+  font-weight: 600;
+  color: var(--primaryColor);
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select .option.selected:focus {
+  background: #f6f6f6;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select a {
+  color: #aaa;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#dashboard .formWraper form .formGroup .formSelect .dropdown-select a:hover {
+  color: #666;
+}
+
+#dashboard .formWraper form .formGrouptextarea {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+}
+
+#dashboard .formWraper form .formGrouptextarea label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#dashboard .formWraper form .formGrouptextarea textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+#dashboard .formWraper form .formGrouptextarea textarea:focus {
+  border: 1px solid var(--primaryColor);
+}
+
+#dashboard .formWraper form .profileUpload {
+  width: 100%;
+  margin-top: 20px;
+}
+
+#dashboard .formWraper form .profileUpload label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#dashboard .formWraper form .profileUpload .file-upload {
+  margin-top: 10px;
+}
+
+#dashboard .formWraper form .profileUpload .file-upload .image-box {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  border: 3px solid var(--primaryColor);
+  border-radius: 15px;
+  position: relative;
+  z-index: 0;
+}
+
+@media (max-width: 480px) {
+  #dashboard .formWraper form .profileUpload .file-upload .image-box {
+    width: 100%;
+  }
+}
+
+#dashboard .formWraper form .profileUpload .file-upload .image-box img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 13px;
+}
+
+#dashboard .formWraper form .profileUpload .file-upload .image-box .editPen {
+  position: absolute;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  background: var(--primaryColor);
+  color: white;
+  bottom: -10px;
+  right: -10px;
+  border-radius: 50px;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard .formWraper form .formBtnArea {
+  width: 100%;
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+  padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard .formWraper form .formBtnArea button {
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  background: var(--primaryColor);
+  color: white;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 5px 20px -2px rgba(0, 76, 255, 0.235);
+          box-shadow: 0px 5px 20px -2px rgba(0, 76, 255, 0.235);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .formWraper form .formBtnArea button:hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+  background: var(--secondaryColor);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+#dashboard .formWraper form .customeInputArea {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+}
+
+#dashboard .formWraper form .customeInputArea::after {
+  content: '';
+  height: 0;
+  width: 22%;
+}
+
+#dashboard .formWraper form .customeInputArea .dummyDiv {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 22%;
+          flex: 0 0 22%;
+  height: 0;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 22%;
+          flex: 0 0 22%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup input {
+  width: 100%;
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup input:focus {
+  border: 1px solid var(--primaryColor);
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup select {
+  width: 100%;
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup select:focus {
+  border: 1px solid var(--primaryColor);
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formPassword {
+  position: relative;
+  width: 100%;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formPassword .togglePassword {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  cursor: pointer;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect select {
+  display: none !important;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.25)), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40FFFFFF', endColorstr='#00FFFFFF', GradientType=0);
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 40px;
+  outline: none;
+  padding-left: 15px;
+  padding-right: 30px;
+  position: relative;
+  text-align: left !important;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  width: 100%;
+  border-radius: 5px;
+  height: 45px;
+  font-weight: 500;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select:focus {
+  border: 1px solid var(--primaryColor);
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select:active,
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select.open {
+  background-color: #fff !important;
+  border: 1px solid var(--primaryColor);
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select:after {
+  height: 0;
+  width: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #777;
+  -webkit-transform: origin(50% 20%);
+  transform: origin(50% 20%);
+  -webkit-transition: all 0.125s ease-in-out;
+  transition: all 0.125s ease-in-out;
+  content: '';
+  display: block;
+  margin-top: -2px;
+  pointer-events: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select.open:after {
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .current {
+  display: block;
+  overflow: hidden;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select.open .list {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select.open .option {
+  cursor: pointer;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select.wide {
+  width: 100%;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select.wide .list {
+  left: 0 !important;
+  right: 0 !important;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .list {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+  transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+  -webkit-transform: scale(0.75);
+  transform: scale(0.75);
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 4px;
+  padding: 3px 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid rgba(128, 128, 128, 0.933);
+  /* width */
+  /* Track */
+  /* Handle */
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .list::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .list::-webkit-scrollbar-track {
+  background: rgba(199, 197, 197, 0.525);
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .list::-webkit-scrollbar-thumb {
+  background: var(--secondaryColor);
+  border-radius: 5px;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .list:hover .option:not(:hover) {
+  background-color: transparent !important;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .dd-search {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0.5rem;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .dd-searchbox {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #999;
+  border-color: #999;
+  border-radius: 5px;
+  outline: none;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .dd-searchbox::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .dd-searchbox:-ms-input-placeholder {
+  font-weight: 400;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .dd-searchbox::-ms-input-placeholder {
+  font-weight: 400;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .dd-searchbox::placeholder {
+  font-weight: 400;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .dd-searchbox:focus {
+  border-color: #12CBC4;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .list ul {
+  padding: 0;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .option {
+  cursor: default;
+  font-weight: 500;
+  line-height: 40px;
+  font-size: 14px;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 29px;
+  text-align: left;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  list-style: none;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .option:hover,
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .option:focus {
+  background-color: #f6f6f6 !important;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .option.selected {
+  font-weight: 600;
+  color: var(--primaryColor);
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select .option.selected:focus {
+  background: #f6f6f6;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select a {
+  color: #aaa;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#dashboard .formWraper form .customeInputArea .formGroup .formSelect .dropdown-select a:hover {
+  color: #666;
+}
+
+#dashboard .formWraper form .customeInputArea .formGrouptextarea {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+}
+
+#dashboard .formWraper form .customeInputArea .formGrouptextarea label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#dashboard .formWraper form .customeInputArea .formGrouptextarea textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+#dashboard .formWraper form .customeInputArea .formGrouptextarea textarea:focus {
+  border: 1px solid var(--primaryColor);
+}
+
+#dashboard .formWraper form .customeInputArea .removeBtn {
+  /*position: absolute;
+  right: 20px;
+  top: 20px;*/
+	flex: 0 0 2%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+#dashboard .formWraper form .customeInputArea .removeBtn .inputRemove {
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  background: var(--fourthColor);
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .formWraper form .customeInputArea .removeBtn .inputRemove:hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+  background: var(--fifthColor);
+}
+
+#dashboard .formWraper form .addNewFormGroup {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+}
+
+#dashboard .formWraper form .addNewFormGroup .addNewFormGroupBtn {
+  padding: 10px 25px;
+  text-decoration: none;
+  background: var(--sixthColor);
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+  border-radius: 10px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .formWraper form .addNewFormGroup .addNewFormGroupBtn:hover {
+  background: var(--primaryColor);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#dashboard .formWraper form .dynamicProductDetails {
+  width: 100%;
+}
+
+.printDesign {
+  display: none;
+}
+
+@media print {
+  .shimmer {
+    display: none !important;
+  }
+  #dashboard {
+    display: none;
+  }
+  .printDesign {
+    display: block;
+	  padding: 15px;
+  }
+  .printDesign .printDesignHead {
+    width: 100%;
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+	  flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .printDesign .printDesignHead .printDesignHeadLogo {
+    width: 110px;
+  }
+  .printDesign .printDesignHead .printDesignHeadLogo img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .printDesign .printDesignHead .printDesignHeadAddress {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: right;
+  }
+  .printDesign .printDesignHead .printDesignHeadAddress p {
+    text-align: center;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .printDesign .printDesignHead .printDesignHeadAddress h2 {
+    text-align: center;
+    font-size: 12px;
+	  margin-top: 10px;
+	  font-weight: 600;
+  }
+  .printDesign .printDesignProfile {
+    width: 100%;
+    border-top: 1px dashed black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	  flex-direction: column;
+	  padding-top: 10px;
+  }
+  .printDesign .printDesignProfile .printDesignProfileBox {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .printDesign .printDesignProfile .printDesignProfileBox:nth-child(1) {
+    border-left: none;
+  }
+  .printDesign .printDesignProfile .printDesignProfileBox ul {
+    width: 100%;
+  }
+  .printDesign .printDesignProfile .printDesignProfileBox ul li {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 5px;
+  }
+  .printDesign .printDesignProfile .printDesignProfileBox ul li:nth-child(1) {
+    margin-top: 0px;
+  }
+  .printDesign .printDesignProfile .printDesignProfileBox ul li span {
+    font-size: 10px;
+    font-weight: 500;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 130px;
+  }
+  .printDesign .printDesignProfile .printDesignProfileBox ul li p {
+    width: calc(100% - 150px);
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .printDesign .printDesignTable {
+    width: 100%;
+    border-top: 1px dashed black;
+	  margin-top: 10px;
+	  padding-top: 0px;
+  }
+  .printDesign .printDesignTable table {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-inside: auto;
+  }
+  .printDesign .printDesignTable table th, .printDesign .printDesignTable table td {
+    padding: 10px 0px;
+    font-size: 10px;
+    text-align: left;
+  }
+  .printDesign .printDesignTable table th b, .printDesign .printDesignTable table td b {
+    font-weight: 600;
+  }
+  .printDesign .printDesignTable table th {
+    font-weight: 600;
+    text-align: left;
+    white-space: pre;
+  }
+  .printDesign .printDesignTable tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  .printDesign .printDesignTable thead {
+    display: table-header-group;
+  }
+  .printDesign .printDesignTable tfoot {
+    display: table-footer-group;
+	  border-top: 1px dashed black;
+  }
+.printDesign .printDesignTC{
+		border-top: 1px dashed black;
+	}
+  .printDesign .printDesignTC h2 {
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  .printDesign .printDesignTC p {
+    font-size: 10px;
+    line-height: 1.7;
+    margin-top: 3px;
+  }
+}
+.pagination {
+  width: 100%;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.pagination .pageCount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagination .pageCount p {
+  font-size: 14px;
+}
+
+.pagination .pageCount select {
+  width: 100px;
+  padding: 5px 10px;
+  border: 1px solid #afafaf;
+  border-radius: 5px;
+  outline: none;
+  margin-left: 20px;
+  background: white;
+}
+
+.pagination .paginationCount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 480px) {
+  .pagination .paginationCount {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    margin-top: 20px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.pagination .paginationCount ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagination .paginationCount ul li {
+  list-style: none;
+  font-size: 14px;
+  padding: 5px 10px;
+  background: rgba(243, 243, 243, 0.555);
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.pagination .paginationCount ul li:hover {
+  background: rgba(228, 228, 228, 0.808);
+}
+
+.pagination .paginationCount ul span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pagination .paginationCount ul .navigationActive {
+  background: #5434e2;
+  color: white;
+}
+
+.pagination .paginationCount ul .navigationActive:hover {
+  background: #5434e2;
+}
+
+
+
+.billLoading{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 20;
+	background: white;
+    width: 400px;
+	border-radius: 20px;
+	padding: 30px;
+    z-index: 101;
+	box-shadow: 0 0 20px #0000001f; 
+	display: none;
+}
+.billLoadingMain{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.billLoadingThumbnail{
+	width: 200px;
+}
+.billLoadingThumbnail img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+.billLoadingMain p{
+	text-align: center;
+	font-size: 20px;
+	font-weight: 400;
+	color: black;
+}
+
+
+
+.pagination {
+  width: 100%;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.pagination .pageCount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagination .pageCount p {
+  font-size: 14px;
+}
+
+.pagination .pageCount select {
+  width: 100px;
+  padding: 5px 10px;
+  border: 1px solid #afafaf;
+  border-radius: 5px;
+  outline: none;
+  margin-left: 20px;
+  background: white;
+}
+
+.pagination .paginationCount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 480px) {
+  .pagination .paginationCount {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    margin-top: 20px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.pagination .paginationCount ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagination .paginationCount ul li {
+  list-style: none;
+  font-size: 14px;
+  padding: 5px 10px;
+  background: rgba(243, 243, 243, 0.555);
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.pagination .paginationCount ul li:hover {
+  background: rgba(228, 228, 228, 0.808);
+}
+
+.pagination .paginationCount ul span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pagination .paginationCount ul .navigationActive {
+  background: #5434e2;
+  color: white;
+}
+
+.pagination .paginationCount ul .navigationActive:hover {
+  background: #5434e2;
+}
+/*# sourceMappingURL=style.css.map */

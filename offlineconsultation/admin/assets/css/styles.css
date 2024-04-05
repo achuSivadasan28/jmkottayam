@@ -1,0 +1,692 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.printDesign {
+  display: none;
+}
+.printTable{
+	display: none;
+}
+
+.printPage{
+	display: none;
+	/*border: 1px solid black;*/
+	position: relative;
+	width: 100%;
+	background: white;
+	height: 100vh;
+}
+.printPage .printPageHead{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	/*border-bottom: 1px solid black;*/
+	/*background: #22A39F;*/
+    color: white;
+	padding:20px;
+}
+.printPage .printPageHead h1{
+	font-size: 25px;
+	font-weight: 600;
+	text-align: center;
+	width :100%;
+	display :flex;
+	align-items: center;
+	justify-content: center;
+	color: #15375f;
+}
+.printPage .printPageHead h1 .printPageHeadLogo{
+	width: 180px;
+	margin-right: 10px;
+}
+.printPage .printPageHead h1 .printPageHeadLogo img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+.printPage .printPageHead p{
+	font-size: 12px;
+	font-weight: 500;
+	text-align: center;
+	color: #15375f;
+}
+.printPage .printPageProfile{
+	width: 100%;
+	border-bottom: 1px solid #15375f;
+	border-top: 1px solid #15375f;
+	padding: 0px 10px 10px 10px;
+	color: #15375f;
+}
+.printPage .printPageProfile .printPageProfileRow{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.printPage .printPageProfile .printPageProfileRow div{
+	flex: 0 0 45%;
+	display :flex;
+	justify-content: space-between;
+}
+.printPage .printPageProfile .printPageProfileRow div b{
+	width: calc(100% - 100px);
+	color: black;
+}
+.printPage .printPageProfile .printPageProfileRow .name{
+	font-size: 12px;
+	font-weight: 600;
+	margin-top: 10px;
+	margin-left: 20px;
+	white-space: pre;
+}
+.printPage .printPageProfile .printPageProfileRow .gender{
+	font-size: 12px;
+	font-weight: 500;
+	margin-top: 10px;
+	margin-left: 20px;
+	white-space: pre;
+}
+.printPage .printPageProfile .printPageProfileRow .age{
+	font-size: 12px;
+	font-weight: 500;
+	margin-top: 10px;
+	margin-left: 20px;
+	white-space: pre;
+}
+.printPage .printPageProfile .printPageProfileRow .id{
+	font-size: 12px;
+	font-weight: 500;
+	margin-top: 10px;
+	margin-left: 20px;
+	white-space: pre;
+}
+.printPage .printPageProfile .printPageProfileRow .totalVisit{
+	font-size: 12px;
+	font-weight: 500;
+	margin-top: 10px;
+	margin-left: 20px;
+	white-space: pre;
+}
+.printPage .printPageProfile .printPageProfileRow .FirstVisit{
+	font-size: 12px;
+	font-weight: 500;
+	margin-top: 10px;
+	margin-left: 20px;
+	white-space: pre;
+}
+.printPage .printPageProfile .printPageProfileRow .LastVisit{
+	font-size: 12px;
+	font-weight: 500;
+	margin-top: 10px;
+	margin-left: 20px;
+	white-space: pre;
+}
+.printPage .printPageProfile .printPageProfileRow .LastVisit2{
+	font-size: 12px;
+	font-weight: 500;
+	margin-top: 10px;
+	margin-left: 20px;
+	white-space: pre;
+}
+.printPage .printPageBody{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.printPage .printPageBody .printPageBodyRow1{
+	width: 100%;
+	height: auto;
+	display: flex;
+	border-top: 1px solid #15375f;
+}
+.printPage .printPageBody .printPageBodyRow1:nth-child(1){
+	border-top: none;
+	height: 100%;
+	display: flex;
+}
+.printPage .printPageBody .printPageBodyRow1:nth-of-type(1) .printPageBox:nth-of-type(2){
+	border-right: 1px solid #15375f;
+}
+.printPage .printPageBody .printPageBodyRow1 .printPageBox{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 10px 30px;
+	color:#15375f;
+}
+.printPage .printPageBody .printPageBodyRow1 .printPageBox:nth-child(2){
+	/*border-right: 1px solid black;*/
+	border-left: 1px solid #15375f;
+}
+.printPage .printPageBody .printPageBodyRow1 .printPageBox h2{
+	font-size: 14px;
+	font-weight: 600;
+	font-style: italic;
+	margin-bottom: 10px;
+	color: #15375f;
+}
+.printPage .printPageBody .printPageBodyRow1 .printPageBox .doctorDetailBox{
+	width :100%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+	padding-left: 30px;
+}
+.printPage .printPageBody .printPageBodyRow1 .printPageBox .doctorDetailBox:nth-child(1){
+	margin-top: 0;
+}
+.printPage .printPageBody .printPageBodyRow1 .printPageBox .doctorDetailBox ul{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.printPage .printPageBody .printPageBodyRow1 .printPageBox .doctorDetailBox ul li{
+	width: 100%;
+	list-style: none
+	font-size: 12px;
+	margin-top: 5px;
+	margin-left: 30px;
+}
+.printPage .printPageBody .printPageBodyRow1 .printPageBox .doctorDetailBox ul li:nth-child(1){
+	margin-top: 0;
+	margin-left: 0px;
+}
+.printPage .printPageBody .printPageBodyRow1 .printPageBox p{
+	font-size: 14px;
+	font-weight: 400;
+	margin-top: 10px;
+	color: #000;
+}
+.printPage .printPageBody .printPageBodyRow1 .printPageBox p:nth-child(2){
+	margin-top: 0;
+}
+.printPage .printPageBody .printPageBodyRow1 .printPageBox ul{
+	width:100%;
+	display: flex;
+	flex-direction: column;
+}
+.printPage .printPageBody .printPageBodyRow1 .printPageBox li{
+	list-style: none;
+	font-size: 14px;
+	font-weight: 400;
+	margin-top: 10px;
+	color: #000;
+}
+.printPage .printPageBody .printPageBodyRow1 .printPageBox li:nth-child(1){
+	margin-top: 0;
+}
+.printPage .printPageBody .printPageBodyRow2{
+	width: 100%;
+	height: auto;
+	display: flex;
+	border-top: 1px solid #15375f;
+}
+.printPage .printPageBody .printPageBodyRow2 .printPageBox{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 10px 30px;
+}
+.printPage .printPageBody .printPageBodyRow2 .printPageBox h2{
+	font-size: 14px;
+	font-weight: 600;
+	font-style: italic;
+	margin-bottom: 10px;
+	color: #15375f;
+}
+.printPage .printPageBody .printPageBodyRow2 .printPageBox p{
+	font-size: 14px;
+	font-weight: 400;
+	margin-top: 10px;
+	color: #15375f;
+}
+.printPage .printPageBody .printPageBodyRow2 .printPageBox p:nth-child(2){
+	margin-top: 0;
+}
+.printPage .printPageFooter{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	border-top: 1px solid #15375f;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: white;
+	/*border: 1px solid black;*/
+	border-left: none;
+	/*background: #22A39F;*/
+	color: white;
+}
+.printPage .printPageFooter h1{
+	font-size: 25px;
+	font-weight: 600;
+	text-align: center;
+	color: #15375f;
+	width :100%;
+	display :flex;
+	align-items: center;
+	justify-content: center;
+	color: #15375f;
+}
+.printPage .printPageFooter h1 .printPageFooterLogo{
+	width: 180px;
+	margin-right: 10px;
+}
+.printPage .printPageFooter h1 .printPageFooterLogo img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+.printPage .printPageFooter p{
+	font-size: 12px;
+	font-weight: 500;
+	text-align: center;
+	margin-top: 5px;
+	color: #15375f;
+}
+.printPage .printPageFooter p i{
+	margin-left: 10px;
+}
+
+
+
+
+@media print {
+	
+	main{
+		display: none;
+	}
+  .printPage {
+	  display: block;
+	}
+	
+  .shimmer {
+    display: none !important;
+  }
+	.filterSection{
+		display: none;
+	}
+  #dashboard {
+    display: none;
+  }
+  .printDesign {
+    display: block;
+	  padding: 15px;
+  }
+  .printDesign .printDesignHead {
+    width: 100%;
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+	  flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .printDesign .printDesignHead .printDesignHeadLogo {
+    width: 110px;
+  }
+  .printDesign .printDesignHead .printDesignHeadLogo img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .printDesign .printDesignHead .printDesignHeadAddress {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: right;
+  }
+  .printDesign .printDesignHead .printDesignHeadAddress p {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .printDesign .printDesignHead .printDesignHeadAddress h2 {
+    text-align: center;
+    font-size: 16px;
+	  margin-top: 10px;
+	  font-weight: 600;
+  }
+  .printDesign .printDesignProfile {
+    width: 100%;
+    border-top: 1px dashed black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	  flex-direction: column;
+	  padding-top: 10px;
+  }
+  .printDesign .printDesignProfile .printDesignProfileBox {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .printDesign .printDesignProfile .printDesignProfileBox:nth-child(1) {
+    border-left: none;
+  }
+  .printDesign .printDesignProfile .printDesignProfileBox ul {
+    width: 100%;
+  }
+  .printDesign .printDesignProfile .printDesignProfileBox ul li {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 5px;
+  }
+  .printDesign .printDesignProfile .printDesignProfileBox ul li:nth-child(1) {
+    margin-top: 0px;
+  }
+  .printDesign .printDesignProfile .printDesignProfileBox ul li span {
+    font-size: 14px;
+    font-weight: 500;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 130px;
+  }
+  .printDesign .printDesignProfile .printDesignProfileBox ul li p {
+    width: calc(100% - 150px);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+.printDesign .printDesignTable2{
+	width :100%;
+	display :flex;
+	flex-direction: column;
+}
+.printDesign .printDesignTable2 ul{
+	width :100%;	
+	display :flex;
+	flex-direction: column;
+	border-top: 1px dashed black;
+	padding: 5px 0px;
+}
+.printDesign .printDesignTable2 ul li{
+	width :100%;
+	display: flex;
+	list-style: none;
+	font-size: 14px;
+	padding: 5px 0px;
+}
+.printDesign .printDesignTable2 ul li span{
+	width: 40%;
+}
+
+
+
+
+  .printDesign .printDesignTable {
+    width: 100%;
+    /*border-top: 1px dashed black;*/
+	  margin-top: 10px;
+	  padding-top: 0px;
+  }
+  .printDesign .printDesignTable table {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-inside: auto;
+	  table-layout: fixed;
+  }
+  .printDesign .printDesignTable table th, .printDesign .printDesignTable table td {
+    padding: 10px 0px;
+    font-size: 14px;
+    text-align: left;
+  }
+  .printDesign .printDesignTable table th b, .printDesign .printDesignTable table td b {
+    font-weight: 600;
+  }
+  .printDesign .printDesignTable table th {
+    font-weight: 600;
+    text-align: left;
+    white-space: pre;
+  }
+  .printDesign .printDesignTable tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+	  border-top: 1px dashed black;
+  }
+	.tableInvoice tr{
+		width: 100%;
+	}
+	.tableInvoice tr td{
+		display: flex;
+		padding: 5px 0px !important;
+		white-space: pre;
+	}
+.tableInvoice tr td:nth-child(1),{
+		padding-top: 10px !important;
+	}
+.tableInvoice tr td:nth-last-child(1){
+		padding-bottom: 10px !important;
+	}
+	.tableInvoice tr td span{
+		width: 100%;
+	}
+  .printDesign .printDesignTable thead {
+    display: table-header-group;
+  }
+  .printDesign .printDesignTable tfoot {
+    display: table-footer-group;
+	  border-top: 1px solid black;
+  }
+.printDesign .printDesignTC{
+		border-top: 1px dashed black;
+	}
+  .printDesign .printDesignTC h2 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  .printDesign .printDesignTC p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 3px;
+  }
+	
+
+
+	
+	.printTable{
+		display: block;
+	}
+	.printTable .printTableHead{
+		width: 100%;
+		border: 1px solid #000;
+		padding: 20px;
+		display: flex;
+		justify-content: space-between;
+	  	border-bottom: none;
+	}
+	.printTable .printTableHead .printTableHeadBox{
+		flex: 0 0 48%;
+	}
+	.printTable .printTableHead .printTableHeadBox .printTableHeadBoxLogo{
+		width: 200px;
+	}
+	.printTable .printTableHead .printTableHeadBox .printTableHeadBoxLogo img{
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+	.printTable .printTableHead .printTableHeadBox1{
+		flex: 0 0 48%;
+		display: flex;
+		flex-direction: column;
+	}
+	.printTable .printTableHead .printTableHeadBox1 p{
+		font-size: 12px;
+		text-align: right;
+		line-height: 1.5;
+	}
+	.printTable .printTableValue{
+		width: 100%;
+		border: 1px solid black;
+		border-bottom: 0;
+		display: flex;
+		justify-content: space-between;
+	}
+	.printTable .printTableValueBox{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+	}
+	.printTable .printTableValueBox h1{
+		font-size: 22px;
+		font-weight: 600;
+	}
+	.printTable .printTableValueBox p{
+		font-size: 14px;
+		font-weight: 500;
+		margin-top: 10px;
+	}
+	.printTable .printTableValueBox:nth-child(1){
+		border-right: 1px solid black;
+	}
+	.printTable .printTableBody{
+		width: 100%;
+		
+	}
+  .printTable .printTableBody table {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-inside: auto;
+	  border: 1px solid black;
+  }
+  .printTable .printTableBody table th, .printTable .printTableBody table td {
+    padding: 10px 10px;
+    font-size: 10px;
+    text-align: left;
+  }
+	.printTable .printTableBody table td {
+	  border-bottom: 1px solid #eee;
+	}
+	.printTable .printTableBody table tr:nth-last-child(1) td {
+		border-bottom: none;
+	}
+  .printTable .printTableBody table th b, .printTable .printTableBody table td b {
+    font-weight: 600;
+  }
+  .printTable .printTableBody table th {
+    font-weight: 600;
+    text-align: left;
+    white-space: pre;
+	  border-bottom: 1px solid black;
+  }
+  .printTable .printTableBody tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  .printTable .printTableBody thead {
+    display: table-header-group;
+  }
+}
+
+
+
+.pagination ul{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #eee;
+}
+.pagination ul li{
+  color: black;
+  list-style: none;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+    height: 25px;
+    display: flex;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+	padding: 0px 5px;
+}
+.pagination ul li.numb{
+  list-style: none;
+    height: 25px;
+    width: 25px;
+    margin: 0 3px;
+    display: flex;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+.pagination ul li.numb.first{
+  margin: 0px 3px 0 -5px;
+}
+.pagination ul li.numb.last{
+  margin: 0px -5px 0 3px;
+}
+.pagination ul li.dots{
+  font-size: 22px;
+  cursor: default;
+}
+/*.pagination ul li.btn{
+  padding: 0 20px;
+  border-radius: 50px;
+}*/
+.pagination li.active,
+.pagination ul li.numb:hover,
+.pagination ul li:first-child:hover,
+.pagination ul li:last-child:hover{
+  color: #fff;
+  background: #1c9900;
+}

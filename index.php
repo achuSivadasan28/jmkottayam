@@ -32,7 +32,7 @@
                 <a href="login.php" class="dashboardListBox">
                     <h2>Pharmacy Billing</h2>
                 </a>
-                <a href="offlineconsultation/login.php" class="dashboardListBox">
+                <a href="offlineconsultation/login.php" class="dashboardListBox" style="color:red">
                     <h2>Offline Appointments</h2>
                 </a>
 				

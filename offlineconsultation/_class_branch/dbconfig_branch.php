@@ -1,9 +1,9 @@
 <?php
 class Dbconn_branch
 {
-		private $user_name = 'trsr_con';
-		private $password = '0&r8zw0C1';
-		private $db_name = 'db_trsr_con';
+		private $user_name = 'ktm_con';
+		private $password = 'sG^56c50w';
+		private $db_name = 'db_ktm_con';
     public static function con()
     {
 		global $branch;
@@ -82,9 +82,9 @@ class Dbconn_branch
 			$self->password = '0&r8zw0C1';
 			$self->db_name = 'db_trsr_con';
 		}else if($branch == 23){
-			$self->user_name = 'root';
-			$self->password = '';
-			$self->db_name = 'db_ktnm_con';
+			$self->user_name = 'ktm_con';
+			$self->password = 'sG^56c50w';
+			$self->db_name = 'db_ktm_con';
 		}
 		
       $connect=mysqli_connect("localhost:3306","$self->user_name","$self->password","$self->db_name");
